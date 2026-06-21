@@ -1,0 +1,1 @@
+Run `npx tailwindcss -i ./src/input.css -o ./src/output.css --watch` to update the CSS files during development. kthxbye
