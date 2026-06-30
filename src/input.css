@@ -1,2 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import "tailwindcss";
+
+nav a[href="#"] {
+    @apply text-stone-600;
+}
+
+body:not(:has(#features:target)):not(:has(#team:target)):not(:has(#contacts:target)) nav a[href="#"] {
+    @apply bg-red-600 text-white;
+}
+
+body:has(#features:target) a[href="#features"],
+body:has(#team:target) a[href="#team"],
+body:has(#contacts:target) a[href="#contacts"] {
+    @apply bg-red-600 text-white;
+}

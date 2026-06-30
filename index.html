@@ -4,93 +4,227 @@
     <meta charset="UTF-8">
     <title>Home</title>
     <link href="./src/output.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
-<div class="flex flex-col h-screen">
+<div class="flex flex-col min-h-screen">
     <!-- Header section -->
-    <header class="flex justify-between p-4 bg-white/80 shadow-md backdrop-blur-md">
-        <div class="flex">
+    <header class="flex justify-between items-center px-6 py-4 bg-white/80 shadow-sm backdrop-blur-md sticky top-0 z-10 border-b border-amber-100">
+        <div class="flex items-center gap-3">
             <img src="assets/Massa_Logo.png" class="h-12 w-12" alt="logo"/>
-            <h1 class="px-4 py-2 font-bold text-2xl">MASSA ClubApp</h1>
+            <h1 class="font-extrabold text-2xl text-stone-800 tracking-tight">MASSA <span class="text-red-600">ClubApp</span></h1>
         </div>
         <!-- Link group -->
-        <div class="flex gap-3">
-            <a href="#" class="bg-blue-600 text-white font-bold px-4 py-2 rounded">Home</a>
-            <a href="#features" class="px-4 py-2 rounded">Features</a>
-            <a href="#" class="px-4 py-2 rounded">About Us</a>
-            <a href="#" class="px-4 py-2 rounded">Team</a>
-            <a href="#" class="px-4 py-2 rounded">Contact</a>
-        </div>
+        <nav class="flex gap-2 items-center text-stone-600 font-medium">
+            <a href="#" class="px-4 py-2 rounded-full hover:bg-amber-100 hover:text-red-600 transition">Home</a>
+            <a href="#features" class="px-4 py-2 rounded-full hover:bg-amber-100 hover:text-red-600 transition">Features</a>
+            <a href="#team" class="px-4 py-2 rounded-full hover:bg-amber-100 hover:text-red-600 transition">Team</a>
+            <a href="#contacts" class="px-4 py-2 rounded-full hover:bg-amber-100 hover:text-red-600 transition">Contact</a>
+        </nav>
     </header>
     <!-- Body section -->
     <main class="flex-1">
         <!-- Hero section -->
-        <div class="bg-amber-100 p-4 flex justify-between">
-            <div>
-                <p class="text-4xl text-red-600 mt-6">MASSA ClubApp</p>
-                <p class="text-2xl mt-2">Your one-stop app for managing a club</p>
-                <p class="text-xl mt-4 w-120">A Flutter mobile application that provides everything you wanted for
+        <div class="bg-amber-100 px-6 py-16 md:py-24 flex flex-col md:flex-row justify-between items-center gap-12">
+            <div class="max-w-xl">
+                <p class="text-5xl font-extrabold text-red-600 tracking-tight leading-tight">MASSA ClubApp</p>
+                <p class="text-2xl text-stone-700 mt-3">Your one-stop app for managing a club</p>
+                <p class="text-lg text-stone-600 mt-4 leading-relaxed">A Flutter mobile application that provides everything you wanted for
                     managing your clubs and activities.</p>
                 <!-- Button group -->
-                <div class="flex gap-3">
-                    <button class="mt-6 bg-red-500 rounded-3xl px-5 py-2">
+                <div class="flex gap-4 mt-8">
+                    <button class="bg-red-600 hover:bg-red-700 transition rounded-full px-6 py-3 shadow-lg shadow-red-600/30">
                         <a href="#">
-                            <span class="text-white text-xl">Download app</span>
+                            <span class="text-white text-lg font-semibold">Download app</span>
                         </a>
                     </button>
-                    <button class="mt-6 bg-yellow-500 rounded-3xl px-5 py-2">
+                    <button class="bg-yellow-500 hover:bg-yellow-600 transition rounded-full px-6 py-3 shadow-lg shadow-yellow-500/30">
                         <a href="#">
-                            <span class="text-white text-xl">Learn more</span>
+                            <span class="text-white text-lg font-semibold">Learn more</span>
                         </a>
                     </button>
                 </div>
             </div>
-            <div>
-                Images here
+            <div class="relative flex-1 flex items-center justify-center w-full">
+                <div class="absolute w-72 h-72 bg-yellow-300/40 rounded-full blur-3xl -z-10"></div>
+                <div class="relative w-full max-w-sm aspect-9/16">
+                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6zq5XtyV3yg?si=zET5d5mVr09C6oZx" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe class="mt-4" width="560" height="315" src="https://www.youtube-nocookie.com/embed/6zq5XtyV3yg?si=zET5d5mVr09C6oZx" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
             </div>
         </div>
 
         <!-- Problem/solution section -->
-        <div class="flex flex-col justify-center gap-10 mt-20 mb-20">
-            <div class="flex flex-col items-center gap-3">
-                <p class="text-4xl">Still managing clubs manually?</p>
-                <p class="text-2xl w-5xl text-center">
+        <div class="px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <div class="bg-white rounded-2xl shadow-md p-8 border-l-4 border-red-500">
+                <p class="text-3xl font-bold text-stone-800 mb-3">Still managing clubs manually?</p>
+                <p class="text-lg text-stone-600 leading-relaxed">
                     Managing people and events are hard.
                     University clubs are still managing events and its committee members and their tasks
                     using different communication platforms and tools.
                     Wonder why no one joins your events?
                 </p>
             </div>
-            <div class="flex flex-col items-center gap-3">
-                <p class="text-4xl">Do a lot better with our app.</p>
-                <p class="text-2xl w-5xl text-center">
+            <div class="bg-white rounded-2xl shadow-md p-8 border-l-4 border-amber-500">
+                <p class="text-3xl font-bold text-stone-800 mb-3">Do a lot better with our app.</p>
+                <p class="text-lg text-stone-600 leading-relaxed">
                     This app provides everything you wanted for managing a university club, including hosting and managing events with ease, as well as keep track of your committee members to ensure responsibility.
                 </p>
             </div>
         </div>
 
         <!-- Features section -->
-        <section id="features">
-            <div class="bg-amber-100 p-4 flex flex-col items-center">
-                <h3 class="text-3xl mb-5 text-red-600">Features</h3>
-                <div class="flex gap-30">
-                    <div class="bg-white/80 rounded shadow-md backdrop-blur-md p-4">
-                        Card 1
+        <section id="features" class="bg-amber-50 py-10">
+            <div class="max-w-6xl mx-auto px-6 flex flex-col items-center">
+                <h3 class="text-4xl font-extrabold text-stone-800 mb-12">Features</h3>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+                    <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center gap-4 text-center hover:-translate-y-1 hover:shadow-lg transition">
+                        <div class="bg-red-50 p-4 rounded-full">
+                            <img src="assets/icons/event_list_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="event-icon"
+                                 width="32" height="32">
+                        </div>
+                        <h4 class="font-bold text-stone-800">Event Management</h4>
+                        <p class="text-stone-600 text-sm">Create and manage your events easily.</p>
                     </div>
-                    <div class="bg-white/80 rounded shadow-md backdrop-blur-md p-4">
-                        Card 1
+                    <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center gap-4 text-center hover:-translate-y-1 hover:shadow-lg transition">
+                        <div class="bg-amber-50 p-4 rounded-full">
+                            <img src="assets/icons/groups_48dp_000000_FILL0_wght400_GRAD0_opsz48.svg" alt="event-icon"
+                                 width="32" height="32">
+                        </div>
+                        <h4 class="font-bold text-stone-800">Exco Manage</h4>
+                        <p class="text-stone-600 text-sm">Manage and monitor your executive committee members.</p>
                     </div>
-                    <div class="bg-white/80 rounded shadow-md backdrop-blur-md p-4">
-                        Card 1
+                    <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center gap-4 text-center hover:-translate-y-1 hover:shadow-lg transition">
+                        <div class="bg-red-50 p-4 rounded-full">
+                            <img src="assets/icons/calendar_check_48dp_000000_FILL0_wght400_GRAD0_opsz48.svg" alt="event-icon"
+                                 width="32" height="32">
+                        </div>
+                        <h4 class="font-bold text-stone-800">Event Calendar</h4>
+                        <p class="text-stone-600 text-sm">See upcoming events in your club and never miss out again.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center gap-4 text-center hover:-translate-y-1 hover:shadow-lg transition">
+                        <div class="bg-amber-50 p-4 rounded-full">
+                            <img src="assets/icons/notifications_48dp_000000_FILL0_wght400_GRAD0_opsz48.svg" alt="event-icon"
+                                 width="32" height="32">
+                        </div>
+                        <h4 class="font-bold text-stone-800">Smart Notifications</h4>
+                        <p class="text-stone-600 text-sm">Get reminders on newly created events and increase engagement.</p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section id="screenshots" class="py-10">
+            <div class="max-w-6xl mx-auto px-6 flex flex-col items-center">
+                <h3 class="text-4xl font-extrabold text-stone-800 mb-12">Screenshots</h3>
+                <div class="flex flex-wrap justify-center gap-10">
+                    <div class="w-40 flex flex-col items-center gap-3">
+                        <div class="rounded-4xl border-4 border-stone-800 overflow-hidden shadow-lg hover:scale-105 transition">
+                            <img src="assets/app-screenshots/img_events.png" alt="screenshot-events"
+                                 class="w-full h-auto object-contain">
+                        </div>
+                        <h4 class="text-stone-600 text-sm font-medium">Event management</h4>
+                    </div>
+                    <div class="w-40 flex flex-col items-center gap-3">
+                        <div class="rounded-4xl border-4 border-stone-800 overflow-hidden shadow-lg hover:scale-105 transition">
+                            <img src="assets/app-screenshots/img_exco.png" alt="screenshot-1"
+                                 class="w-full h-auto object-contain">
+                        </div>
+                        <h4 class="text-stone-600 text-sm font-medium">EXCO directory</h4>
+                    </div>
+                    <div class="w-40 flex flex-col items-center gap-3">
+                        <div class="rounded-4xl border-4 border-stone-800 overflow-hidden shadow-lg hover:scale-105 transition">
+                            <img src="assets/app-screenshots/img_calendar.png" alt="screenshot-1"
+                                 class="w-full h-auto object-contain">
+                        </div>
+                        <h4 class="text-stone-600 text-sm font-medium">Calendar view</h4>
+                    </div>
+                    <div class="w-40 flex flex-col items-center gap-3">
+                        <div class="rounded-4xl border-4 border-stone-800 overflow-hidden shadow-lg hover:scale-105 transition">
+                            <img src="assets/app-screenshots/img_notifications.png" alt="screenshot-1"
+                                 class="w-full h-auto object-contain">
+                        </div>
+                        <h4 class="text-stone-600 text-sm font-medium">Smart notifications</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team section -->
+        <section id="team" class="bg-amber-50 py-20">
+            <div class="max-w-5xl mx-auto px-6 flex flex-col items-center">
+                <h3 class="text-4xl font-extrabold text-stone-800 mb-12">Our Team</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+                    <div class="flex bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition">
+                        <img
+                                src="assets/team-photos/photo_wj.jpg"
+                                class="w-24 object-cover"
+                                alt="photo_wj"
+                        >
+                        <div class="p-5">
+                            <h3 class="font-bold text-stone-800">Thang Wei Jie</h3>
+                            <p class="text-red-600 text-sm font-medium">Product Manager, Scrum Master</p>
+                            <p class="text-stone-600 text-sm mt-1">Leads the development project by planning the development activities and validating the product with the customer.</p>
+                        </div>
+                    </div>
+                    <div class="flex bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition">
+                        <img
+                                src="https://simplyilm.com/wp-content/uploads/2017/08/temporary-profile-placeholder-1.jpg"
+                                class="w-24 object-cover"
+                                alt="photo_izzat"
+                        >
+                        <div class="p-5">
+                            <h3 class="font-bold text-stone-800">Izzat Fakhrullah Bin Karim</h3>
+                            <p class="text-red-600 text-sm font-medium">Developer, Tester</p>
+                            <p class="text-stone-600 text-sm mt-1">Developed the product according to the system's specifications. Tested the product to ensure the product functions correctly.</p>
+                        </div>
+                    </div>
+                    <div class="flex bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition">
+                        <img
+                                src="https://simplyilm.com/wp-content/uploads/2017/08/temporary-profile-placeholder-1.jpg"
+                                class="w-24 object-cover"
+                                alt="photo_rifqi"
+                        >
+                        <div class="p-5">
+                            <h3 class="font-bold text-stone-800">Muhammad Rifqi Bin Razali</h3>
+                            <p class="text-red-600 text-sm font-medium">Developer</p>
+                            <p class="text-stone-600 text-sm mt-1">Developed the product according to the system's specifications.</p>
+                        </div>
+                    </div>
+                    <div class="flex bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition">
+                        <img
+                                src="https://simplyilm.com/wp-content/uploads/2017/08/temporary-profile-placeholder-1.jpg"
+                                class="w-24 object-cover"
+                                alt="photo_anisa"
+                        >
+                        <div class="p-5">
+                            <h3 class="font-bold text-stone-800"> Anisa Chowdhury</h3>
+                            <p class="text-red-600 text-sm font-medium">Developer</p>
+                            <p class="text-stone-600 text-sm mt-1">Developed the product according to the system's specifications.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacts section -->
+        <section id="contacts" class="py-20">
+            <div class="max-w-3xl mx-auto px-6 flex flex-col items-center text-center">
+                <h3 class="text-4xl font-extrabold text-stone-800 mb-4">Contact us</h3>
+                <p class="text-stone-600 mb-8">Contact us using the following email addresses:</p>
+                <ul class="flex flex-col gap-3 w-full max-w-sm">
+                    <li class="bg-white rounded-full shadow-sm px-6 py-3 text-stone-700 font-medium">thangjie@graduate.utm.my</li>
+                    <li class="bg-white rounded-full shadow-sm px-6 py-3 text-stone-700 font-medium">izzatfakhrullah@graduate.utm.my</li>
+                    <li class="bg-white rounded-full shadow-sm px-6 py-3 text-stone-700 font-medium">razalirifqi45@gmail.com</li>
+                    <li class="bg-white rounded-full shadow-sm px-6 py-3 text-stone-700 font-medium">anisachowdhury@graduate.utm.my</li>
+                </ul>
+            </div>
+        </section>
     </main>
-    <!-- Footer section -->
-    <footer class="flex justify-between p-4 bg-white/80 shadow-md backdrop-blur-md">
-        <p>Some footer</p>
-    </footer>
 </div>
 </body>
 </html>
